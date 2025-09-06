@@ -39,7 +39,7 @@ export default function MainPage() {
         <About />
       </div>
       <div ref={faqRef}>
-        {/* <FAQ /> */}
+        <FAQ />
       </div>
       <div ref={accessRef}>
         <AccessAIModel />
