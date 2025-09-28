@@ -1,7 +1,9 @@
+import ProfileHeader from "./sections/AvailableProducts";
+
 function Profile() {
   return (
     <div>
-      {/* Cart page content */}
+      <ProfileHeader />
     </div>
   );
 }
