@@ -38,23 +38,3 @@ export default function Dashboard() {
     </div>
   );
 }
-
-
-// "use client";
-
-// import { Import } from "lucide-react";
-// import Sidebar from "./comonents/sidebar";
-// import Browse from "./pages/Browse";
-
-// export default function Dashboard() {
-//   return (
-//     <div className="flex bg-red">
-//       <div className="overflow-y-hidden top-0 bottom-0">
-//       <Sidebar/>
-//       </div>
-//       <div className="">
-//       <Browse />
-//       </div>
-//     </div>
-//   );
-// }

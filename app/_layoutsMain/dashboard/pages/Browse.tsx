@@ -2,12 +2,12 @@
 import React, { useEffect, useState } from "react";
 import { availableMemory } from "process";
 import AvailableProducts from "./sections/AvailableProducts"
-import Chatbot from "./sections/chatbot";
+import Navbar from "./components/Navbar";
 export default function Browse() {
   const [products, setProducts] = useState([]);
   return (
-    <div className="">
-    <Chatbot />
+    <div className="bg-black">
+    <Navbar />
     <AvailableProducts />
     </div>
   );
