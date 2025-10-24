@@ -1,9 +1,8 @@
-import ProfileHeader from "./sections/AvailableProducts";
+import Navbar from "../pages/components/Navbar";
 
 function Profile() {
   return (
     <div>
-      <ProfileHeader />
     </div>
   );
 }

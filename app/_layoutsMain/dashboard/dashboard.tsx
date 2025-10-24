@@ -1,7 +1,7 @@
 // bu3-frontend/app/_layoutsMain/dashboard/Dashboard.tsx
 "use client";
 import { useState } from "react";
-import Sidebar from "./comonents/sidebar";
+import Sidebar from "./components/sidebar";
 import Browse from "./pages/Browse";
 import Cart from "./pages/cart";
 import Chatpage from "./pages/chatpage";
@@ -18,7 +18,7 @@ export default function Dashboard() {
         return <Browse />;
       case "Cart":
         return <Cart />;
-      case "Chatpage":
+      case "AI analytics":
         return <Chatpage />;
       case "Profile":
         return <Profile />;
@@ -32,7 +32,7 @@ export default function Dashboard() {
   return (
     <div className="flex h-screen w-full overflow-hidden">
       <Sidebar onNavigate={setActivePage} />
-      <main className="flex-1 overflow-y-auto bg-gray-950 text-white">
+      <main className="flex-1 overflow-y-auto text-white">
         {renderPage()}
       </main>
     </div>
