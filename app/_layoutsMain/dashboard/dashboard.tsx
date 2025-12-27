@@ -1,45 +1,39 @@
+// bu3-frontend/app/_layoutsMain/dashboard/Dashboard.tsx
 "use client";
-import React from "react";
-
-// Sidebar item type
-type SidebarItem = {
-  label: string;
-  key: string;
-};
-
-const sidebarItems: SidebarItem[] = [
-  { label: "Home", key: "home" },
-  { label: "Projects", key: "projects" },
-  { label: "Teams", key: "teams" },
-  { label: "Settings", key: "settings" },
-];
+import { useState } from "react";
+import Sidebar from "./components/sidebar";
+import Browse from "./pages/Browse";
+import Cart from "./pages/cart";
+import Chatpage from "./pages/chatpage";
+import Profile from "./pages/profile";
+import Stock from "./pages/stock";
+import Deafult from "./pages/Default";
 
 export default function Dashboard() {
-  return (
-    <div className="flex h-screen bg-black text-white font-sans">
-      {/* Sidebar */}
-      <aside className="w-64 bg-gray-900 p-6 flex flex-col gap-4">
-        {sidebarItems.map((item) => (
-          <button
-            key={item.key}
-            className="w-full px-4 py-3 rounded-lg border-2 border-purple-500 bg-black hover:shadow-lg hover:shadow-purple-500/50 transition text-white text-left"
-          >
-            {item.label}
-          </button>
-        ))}
-      </aside>
+  const [activePage, setActivePage] = useState("Default");
 
-      {/* Main Content */}
-      <main className="flex-1 p-8">
-        <div className="w-full h-full flex flex-col items-center justify-center">
-          <div className="p-8 border-2 border-purple-500 rounded-2xl w-full max-w-4xl bg-black shadow-md shadow-purple-500/50">
-            <h1 className="text-3xl font-bold mb-4">Dashboard</h1>
-            <p className="text-gray-300">
-              Welcome to your dashboard. This is the starting point for all your
-              projects and interactions.
-            </p>
-          </div>
-        </div>
+  const renderPage = () => {
+    switch (activePage) {
+      case "Browse":
+        return <Browse />;
+      case "Cart":
+        return <Cart />;
+      case "AI analytics":
+        return <Chatpage />;
+      case "Profile":
+        return <Profile />;
+      case "Stock":
+        return <Stock />;
+      default:
+        return <Deafult />;
+    }
+  };
+
+  return (
+    <div className="flex h-screen w-full overflow-hidden">
+      <Sidebar onNavigate={setActivePage} />
+      <main className="flex-1 overflow-y-auto text-white">
+        {renderPage()}
       </main>
     </div>
   );

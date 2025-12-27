@@ -27,6 +27,7 @@ export default function MainPage() {
 
   return (
     <div className="bg-black text-white min-h-screen font-sans">
+      <text>main</text>
       {/* Accent wrapper */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-black via-black to-[#BB86FC]/10" />
 
